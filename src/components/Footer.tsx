@@ -20,10 +20,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Hair Services</a></li>
               <li><a className="hover:text-[#B5695A] transition-colors" href="#">Nails</a></li>
               <li><a className="hover:text-[#B5695A] transition-colors" href="#">Makeup</a></li>
+              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Hair</a></li>
               <li><a className="hover:text-[#B5695A] transition-colors" href="#">Waxing</a></li>
+              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Lashes</a></li>
+
             </ul>
           </div>
 
@@ -67,14 +69,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-8 border-t border-[#B5695A]/10">
 
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-[#B5695A]" />
+            <Clock className="w-5 h-5 text-rose-400 mt-1 flex-shrink-0" />
             <div>
               <p className="font-semibold text-white mb-2">Hours</p>
-              <p className="text-sm text-gray-400">Mon - Fri: 10:00 AM - 7:00 PM</p>
-              <p className="text-sm text-gray-400">Saturday: 10:00 AM - 6:00 PM</p>
-              <p className="text-sm text-gray-400">Sunday: Closed</p>
+              <p className="text-sm">Monday - Friday: 09:00 AM - 17:30 PM</p>
+              <p className="text-sm">Saturday: 09:00 AM - 13:30 PM</p>
+              <p className="text-sm">Sunday: Closed</p>
             </div>
           </div>
+
 
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 text-[#B5695A]" />

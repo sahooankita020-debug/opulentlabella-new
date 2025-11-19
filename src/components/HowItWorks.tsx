@@ -10,7 +10,7 @@ const steps = [
   {
     icon: CreditCard,
     title: 'Confirm with a Deposit',
-    description: 'Secure your appointment with a small deposit to ensure your booking.',
+    description: 'A non refundable fee of a R150 is required to ensure your booking.',
   },
   {
     icon: Sparkles,
