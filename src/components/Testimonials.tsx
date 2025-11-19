@@ -9,7 +9,7 @@ const testimonials = [
   },
   {
     name: 'Jessica L.',
-    text: 'Best nail experience I\'ve had. The technician was so skilled and the products are high quality. Worth every penny!',
+    text: "Best nail experience I've had. The technician was so skilled and the products are high quality. Worth every penny!",
     rating: 5,
     service: 'Manicure & Pedicure',
   },
@@ -23,56 +23,72 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-section px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-section px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white to-champagne/40">
       <div className="max-w-7xl mx-auto">
+
+        {/* HEADING */}
         <div className="text-center mb-16">
-          <h2 className="font-serif text-heading-lg mb-4 text-gray-900">Loved by Our Clients</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Real experiences from real clients who trust Opulentlabella with their beauty needs.
+          <h2 className="font-serif text-heading-lg mb-4 text-black">Loved by Our Clients</h2>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            Real experiences from clients who trust Opulentlabella with their beauty needs.
           </p>
         </div>
 
+        {/* TESTIMONIAL CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, idx) => (
             <div
               key={idx}
-              className="relative rounded-2xl p-8 bg-white border border-gray-100 hover:border-rose-200 hover:shadow-xl transition-all duration-300"
+              className="relative rounded-2xl p-8 bg-white border border-roseGold/30 hover:shadow-xl transition-all duration-300"
             >
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gold-100 rounded-full opacity-40 blur-xl" />
+              {/* Soft blush glow */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blush rounded-full opacity-40 blur-xl" />
 
               <div className="relative z-10">
+
+                {/* STARS */}
                 <div className="flex items-center gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold-400 text-gold-400" />
+                    <Star key={i} className="w-4 h-4 text-[#B5695A] fill-[#B5695A]" />
                   ))}
                 </div>
 
-                <Quote className="w-6 h-6 text-rose-200 mb-4" />
+                {/* QUOTE ICON */}
+                <Quote className="w-7 h-7 text-roseGold mb-4" />
 
-                <p className="text-gray-700 mb-6 leading-relaxed italic">{testimonial.text}</p>
+                {/* TEXT */}
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                  {testimonial.text}
+                </p>
 
-                <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                {/* FOOTER */}
+                <div className="flex items-center justify-between pt-6 border-t border-roseGold/20">
                   <div>
-                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                    <p className="font-semibold text-black">{testimonial.name}</p>
                     <p className="text-sm text-gray-600">{testimonial.service}</p>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-200 to-gold-200 flex items-center justify-center font-semibold text-rose-700">
+
+                  {/* Initial Circle */}
+                  <div className="w-12 h-12 rounded-full bg-roseGold/30 flex items-center justify-center font-semibold text-[#B5695A]">
                     {testimonial.name.charAt(0)}
                   </div>
                 </div>
+
               </div>
             </div>
           ))}
         </div>
 
+        {/* CTA BANNER */}
         <div className="mt-16 text-center">
-          <div className="inline-block rounded-full bg-rose-50 px-6 py-3 border border-rose-100">
+          <div className="inline-block rounded-full bg-champagne px-6 py-3 border border-roseGold/30 shadow-sm">
             <p className="text-gray-700">
-              <span className="font-semibold text-rose-600">Word-of-Mouth Trusted</span>
-              <span className="text-gray-600 ml-2">Join our community of satisfied clients</span>
+              <span className="font-semibold text-[#B5695A]">Word-of-Mouth Trusted</span>
+              <span className="text-gray-700 ml-2">Join our community of satisfied clients</span>
             </p>
           </div>
         </div>
+
       </div>
     </section>
   );
