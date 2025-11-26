@@ -2,104 +2,99 @@ import { Instagram, MessageCircle, Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A1A1A] text-gray-300 py-16 px-6 sm:px-8 lg:px-12 border-t border-[#B5695A]/20">
+    <footer className="bg-brand-dark text-brand-cream py-16 px-6 sm:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* TOP GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
 
-          {/* BRAND */}
+          {/* Brand Block */}
           <div>
-            <h3 className="font-serif text-2xl text-white mb-4">Opulentlabella</h3>
-            <p className="text-sm leading-relaxed text-gray-400">
-              Luxury beauty services at accessible prices. Your destination for nails, waxing, makeup and hair.
+            <h3 className="font-serif text-xl text-brand-cream mb-4">Opulentlabella</h3>
+            <p className="text-sm leading-relaxed text-brand-cream/80">
+              Luxury beauty services at accessible prices. Your destination for nails, makeup,
+              lashes, waxing, and hair styling.
             </p>
           </div>
 
-          {/* SERVICES */}
+          {/* Services */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Services</h4>
+            <h4 className="font-semibold text-brand-cream mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Nails</a></li>
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Makeup</a></li>
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Hair</a></li>
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Waxing</a></li>
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Lashes</a></li>
-
+              <li><a className="hover:text-brand-primary transition">Nails</a></li>
+              <li><a className="hover:text-brand-primary transition">Makeup</a></li>
+              <li><a className="hover:text-brand-primary transition">Hair</a></li>
+              <li><a className="hover:text-brand-primary transition">Waxing</a></li>
+              <li><a className="hover:text-brand-primary transition">Lashes</a></li>
             </ul>
           </div>
 
-          {/* INFORMATION */}
+          {/* Info */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Information</h4>
+            <h4 className="font-semibold text-brand-cream mb-4">Information</h4>
             <ul className="space-y-2 text-sm">
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">About Us</a></li>
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Booking Policy</a></li>
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Cancellation Policy</a></li>
-              <li><a className="hover:text-[#B5695A] transition-colors" href="#">Privacy Policy</a></li>
+              <li><a className="hover:text-brand-primary transition">About Us</a></li>
+              <li><a className="hover:text-brand-primary transition">Booking Policy</a></li>
+              <li><a className="hover:text-brand-primary transition">Cancellation Policy</a></li>
+              <li><a className="hover:text-brand-primary transition">Privacy Policy</a></li>
             </ul>
           </div>
 
-          {/* CONTACT */}
+          {/* Contact */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Contact</h4>
+            <h4 className="font-semibold text-brand-cream mb-4">Contact</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#B5695A]" />
-                <a className="hover:text-[#B5695A] transition-colors" href="tel:+27614522153">+27 61 452 2153</a>
+                <Phone className="w-4 h-4 text-brand-primary" />
+                <a href="tel:+27604622557" className="hover:text-brand-primary transition">
+                  +27 60 462 2557
+                </a>
               </div>
+
               <div className="flex items-center gap-3">
-                <MessageCircle className="w-4 h-4 text-[#B5695A]" />
-                <a className="hover:text-[#B5695A] transition-colors" href="https://wa.me/+27614522153" target="_blank">
+                <MessageCircle className="w-4 h-4 text-brand-primary" />
+                <a href="https://wa.me/27604622557" target="_blank" className="hover:text-brand-primary transition">
                   WhatsApp
                 </a>
               </div>
+
               <div className="flex items-center gap-3">
-                <Instagram className="w-4 h-4 text-[#B5695A]" />
-                <a className="hover:text-[#B5695A] transition-colors" href="https://instagram.com" target="_blank">
+                <Instagram className="w-4 h-4 text-brand-primary" />
+                <a href="https://instagram.com/opulentlabella" target="_blank" className="hover:text-brand-primary transition">
                   @opulentlabella
                 </a>
               </div>
             </div>
           </div>
-
         </div>
 
         {/* HOURS + LOCATION */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-8 border-t border-[#B5695A]/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-t border-brand-primary/30">
 
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-rose-400 mt-1 flex-shrink-0" />
+            <Clock className="w-5 h-5 text-brand-primary mt-1" />
             <div>
-              <p className="font-semibold text-white mb-2">Hours</p>
-              <p className="text-sm">Monday - Friday: 09:00 AM - 17:30 PM</p>
-              <p className="text-sm">Saturday: 09:00 AM - 13:30 PM</p>
-              <p className="text-sm">Sunday: Closed</p>
+              <p className="font-semibold text-brand-cream mb-2">Hours</p>
+              <p className="text-sm text-brand-cream/85">Mon - Fri: 09:00 AM - 17:30 PM</p>
+              <p className="text-sm text-brand-cream/85">Sat: 09:00 AM - 13:30 PM</p>
+              <p className="text-sm text-brand-cream/85">Sunday: Closed</p>
             </div>
           </div>
 
-
           <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-[#B5695A]" />
+            <MapPin className="w-5 h-5 text-brand-primary mt-1" />
             <div>
-              <p className="font-semibold text-white mb-2">Location</p>
-              <p className="text-sm text-gray-400">123 Beauty Street</p>
-              <p className="text-sm text-gray-400">Your City, State 12345</p>
+              <p className="font-semibold text-brand-cream mb-2">Location</p>
+              <p className="text-sm text-brand-cream/85">123 Beauty Street</p>
+              <p className="text-sm text-brand-cream/85">Your City, South Africa</p>
             </div>
           </div>
-
         </div>
 
-        {/* BOTTOM COPYRIGHT */}
-        <div className="mt-12 pt-8 border-t border-[#B5695A]/10 text-center text-sm">
-          <p className="mb-2 text-gray-500">
-            48-hour cancellation policy • Flexible rescheduling • Secure deposit system
-          </p>
-          <p className="text-gray-500">
-            © {new Date().getFullYear()} Opulentlabella. All rights reserved.
-          </p>
+        {/* COPYRIGHT */}
+        <div className="mt-12 pt-8 border-t border-brand-primary/30 text-center text-sm text-brand-cream/70">
+          © {new Date().getFullYear()} Opulentlabella — All rights reserved.
         </div>
-
       </div>
     </footer>
   );

@@ -1,73 +1,114 @@
-import { Scissors, Sparkles, Brush, Flower, Eye } from 'lucide-react';
+import { useState } from "react";
+import { Scissors, Sparkles, Brush, Flower, Eye } from "lucide-react";
+import GalleryModal from "./GalleryModal";
 
 const services = [
   {
     icon: Flower,
-    title: 'Nails',
+    title: "Nails",
     description:
-      'Manicures and pedicures with premium care for healthy, beautiful nails.',
+      "Manicures and pedicures with premium care for healthy, beautiful nails.",
   },
   {
     icon: Brush,
-    title: 'Makeup',
+    title: "Makeup",
     description:
-      'Expert makeup application for any occasion, from everyday to special events.',
+      "Expert makeup application for any occasion, from everyday to special events.",
   },
   {
     icon: Scissors,
-    title: 'Hair Services',
+    title: "Hair",
     description:
-      'Professional Wig Installation, Wig Treatment, Wig Sales, Hair Treatment, and Braids — premium care for beautiful, long-lasting results.',
+      "Professional Wig Installation, Wig Treatment, Wig Sales, Hair Treatment, and Braids — premium care for beautiful, long-lasting results.",
   },
   {
     icon: Sparkles,
-    title: 'Waxing',
+    title: "Waxing",
     description:
-      'Gentle, professional waxing services for smooth, long-lasting results.',
+      "Gentle, professional waxing services for smooth, long-lasting results.",
   },
   {
     icon: Eye,
-    title: 'Lashes',
+    title: "Lashes",
     description:
-      'Premium lash extensions, lash lifts, tinting, and brow shape-ups for a flawless look.',
+      "Premium lash extensions, lash lifts, tinting, and brow shape-ups for a flawless look.",
   },
 ];
 
+const serviceImages: Record<string, string[]> = {
+  Nails: [
+    "/Services/Nails/Nails1.jpg",
+    "/Services/Nails/Nails2.jpg",
+    "/Services/Nails/Nails3.jpg",
+    "/Services/Nails/Nails4.jpg",
+    "/Services/Nails/Nails5.jpg",
+    "/Services/Nails/Nails6.jpg",
+  ],
+  Makeup: [],
+  Hair: [],
+  Waxing: [],
+  Lashes: [
+    "/Services/Lashes/Lash1.jpg",
+    "/Services/Lashes/Lash2.jpg",
+    "/Services/Lashes/Lash3.jpg",
+    "/Services/Lashes/Lash4.jpg",
+  ],
+};
+
 export default function Services() {
+  const [openGallery, setOpenGallery] = useState(false);
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+
+  const handleExplore = (serviceTitle: string) => {
+    setGalleryImages(serviceImages[serviceTitle] || []);
+    setOpenGallery(true);
+  };
+
   return (
-    <section className="py-section px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+    <section className="px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+
       <div className="text-center mb-16">
-        <h2 className="font-serif text-heading-lg mb-4 text-gray-900">Our Services</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h2 className="font-serif text-heading-lg mb-4 text-brand-dark">
+          Our Services
+        </h2>
+        <p className="text-lg text-brand-dark/80 max-w-2xl mx-auto">
           Everything you need for a complete beauty experience, all under one roof.
         </p>
       </div>
 
+      {/* SERVICE CARDS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-
         {services.map((service, idx) => {
           const Icon = service.icon;
           return (
             <div
               key={idx}
-              className="group relative rounded-2xl p-8 bg-white border border-gray-100
-              hover:border-[#B5695A] hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative rounded-2xl p-8 bg-white border border-brand-light
+              hover:border-brand-primary hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#F5E9E7] to-transparent opacity-0 
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-light/40 to-transparent opacity-0 
               group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="relative z-10">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl 
-                bg-gradient-to-br from-[#F2D6D2] to-[#EFD0C8] mb-6 
-                group-hover:shadow-lg group-hover:shadow-[#B5695A]/30 transition-all duration-300">
-                  <Icon className="w-6 h-6 text-[#B5695A]" />
+                bg-gradient-to-br from-brand-light to-brand-primary/25 mb-6 
+                group-hover:shadow-lg group-hover:shadow-brand-primary/40 transition-all duration-300">
+                  <Icon className="w-6 h-6 text-brand-primary" />
                 </div>
 
-                <h3 className="font-serif text-heading-md mb-3 text-gray-900">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <h3 className="font-serif text-heading-md mb-3 text-brand-dark">
+                  {service.title}
+                </h3>
 
-                <div className="mt-6 flex items-center text-[#B5695A] font-semibold 
-                group-hover:gap-2 transition-all duration-300">
+                <p className="text-brand-dark/75 leading-relaxed">
+                  {service.description}
+                </p>
+
+                <div
+                  onClick={() => handleExplore(service.title)}
+                  className="mt-6 flex items-center text-brand-primary font-semibold cursor-pointer 
+                  group-hover:gap-2 transition-all duration-300"
+                >
                   <span>Explore</span>
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
                 </div>
@@ -75,8 +116,14 @@ export default function Services() {
             </div>
           );
         })}
-
       </div>
+
+      {/* FULLSCREEN GALLERY MODAL */}
+      <GalleryModal
+        images={galleryImages}
+        open={openGallery}
+        onClose={() => setOpenGallery(false)}
+      />
     </section>
   );
 }
