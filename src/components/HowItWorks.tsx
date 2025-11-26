@@ -1,4 +1,4 @@
-import { MessageCircle, CreditCard, Sparkles, Gift, ArrowRight } from 'lucide-react';
+import { MessageCircle, CreditCard, Sparkles, Gift } from 'lucide-react';
 
 const steps = [
   {
@@ -25,10 +25,9 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+    <section className="pt-32 pb-section px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
 
-      {/* Section Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-20">
         <h2 className="font-serif text-heading-lg mb-4 text-brand-dark">
           How It Works
         </h2>
@@ -38,46 +37,43 @@ export default function HowItWorks() {
       </div>
 
       {/* Steps */}
-      <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {steps.map((step, idx) => {
-            const Icon = step.icon;
-            return (
-              <div key={idx} className="relative text-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+        {steps.map((step, idx) => {
+          const Icon = step.icon;
+          return (
+            <div key={idx} className="relative text-center">
 
-                {/* Step Number Circle */}
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full 
-                bg-brand-primary text-white text-xl font-bold shadow-lg mb-6">
-                  {idx + 1}
-                </div>
-
-                {/* Icon Small Badge */}
-                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 translate-y-2 
-                w-10 h-10 rounded-full bg-brand-light border border-brand-primary flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-brand-primary" />
-                </div>
-
-                {/* Title + Description */}
-                <h3 className="font-serif text-heading-md mb-3 text-brand-dark">{step.title}</h3>
-                <p className="text-brand-dark/75 leading-relaxed">{step.description}</p>
-
-                {/* Arrow Between Steps (Desktop Only) */}
-                {idx < steps.length - 1 && (
-                  <div className="hidden lg:flex absolute top-8 -right-8">
-                    <ArrowRight className="w-6 h-6 text-brand-primary/40" />
-                  </div>
-                )}
+              {/* Number Circle */}
+              <div className="mx-auto w-20 h-20 rounded-full 
+              bg-brand-primary text-white text-2xl font-bold 
+              flex items-center justify-center shadow-md">
+                {idx + 1}
               </div>
-            );
-          })}
-        </div>
 
-        {/* Line behind steps */}
-        <div className="hidden lg:block absolute top-12 left-16 right-16 h-1 bg-gradient-to-r from-transparent via-brand-light to-transparent" />
+              {/* Icon Below Number */}
+              <div className="mx-auto mt-4 w-12 h-12 rounded-full 
+              bg-brand-light border border-brand-primary 
+              flex items-center justify-center shadow-sm">
+                <Icon className="w-6 h-6 text-brand-primary" />
+              </div>
+
+              {/* Title */}
+              <h3 className="mt-6 font-serif text-heading-md text-brand-dark">
+                {step.title}
+              </h3>
+
+              {/* Description */}
+              <p className="mt-2 text-brand-dark/75 leading-relaxed px-4">
+                {step.description}
+              </p>
+
+            </div>
+          );
+        })}
       </div>
 
       {/* Highlights */}
-      <div className="mt-16 bg-brand-light/40 rounded-2xl p-10 md:p-12 border border-brand-primary/20">
+      <div className="mt-20 bg-brand-light/40 rounded-2xl p-10 md:p-12 border border-brand-primary/20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           <div>
             <div className="text-3xl font-bold text-brand-primary mb-2">48 hrs</div>
