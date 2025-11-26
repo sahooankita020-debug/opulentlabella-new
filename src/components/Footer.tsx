@@ -46,11 +46,11 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#B5695A]" />
-                <a className="hover:text-[#B5695A] transition-colors" href="tel:+1234567890">+1 (234) 567-890</a>
+                <a className="hover:text-[#B5695A] transition-colors" href="tel:+27614522153">+27 61 452 2153</a>
               </div>
               <div className="flex items-center gap-3">
                 <MessageCircle className="w-4 h-4 text-[#B5695A]" />
-                <a className="hover:text-[#B5695A] transition-colors" href="https://wa.me/1234567890" target="_blank">
+                <a className="hover:text-[#B5695A] transition-colors" href="https://wa.me/+27614522153" target="_blank">
                   WhatsApp
                 </a>
               </div>

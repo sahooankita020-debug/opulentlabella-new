@@ -32,7 +32,7 @@ export default function Hero() {
         {/* Heading */}
         <h1 className="font-serif text-display-lg lg:text-5xl font-bold text-black mb-6">
           Affordable Beauty Services with a{' '}
-          <span className="text-[#C4636F] font-extrabold">
+          <span className="text-[#B5695A] font-extrabold">
             Luxury Experience
           </span>
         </h1>

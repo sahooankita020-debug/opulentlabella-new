@@ -1,4 +1,4 @@
-import { Scissors, Sparkles, Brush, Flower,Eye } from 'lucide-react';
+import { Scissors, Sparkles, Brush, Flower, Eye } from 'lucide-react';
 
 const services = [
   {
@@ -43,7 +43,6 @@ export default function Services() {
         </p>
       </div>
 
-      {/* Fix: Grid for 5 items */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
 
         {services.map((service, idx) => {
@@ -51,23 +50,23 @@ export default function Services() {
           return (
             <div
               key={idx}
-              className="group relative rounded-2xl p-8 bg-white border border-gray-100 
-              hover:border-rose-200 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative rounded-2xl p-8 bg-white border border-gray-100
+              hover:border-[#B5695A] hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-50 to-transparent opacity-0 
+              <div className="absolute inset-0 bg-gradient-to-br from-[#F5E9E7] to-transparent opacity-0 
               group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="relative z-10">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl 
-                bg-gradient-to-br from-rose-100 to-gold-100 mb-6 
-                group-hover:shadow-lg group-hover:shadow-rose-200 transition-all duration-300">
-                  <Icon className="w-6 h-6 text-rose-600" />
+                bg-gradient-to-br from-[#F2D6D2] to-[#EFD0C8] mb-6 
+                group-hover:shadow-lg group-hover:shadow-[#B5695A]/30 transition-all duration-300">
+                  <Icon className="w-6 h-6 text-[#B5695A]" />
                 </div>
 
                 <h3 className="font-serif text-heading-md mb-3 text-gray-900">{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{service.description}</p>
 
-                <div className="mt-6 flex items-center text-rose-600 font-semibold 
+                <div className="mt-6 flex items-center text-[#B5695A] font-semibold 
                 group-hover:gap-2 transition-all duration-300">
                   <span>Explore</span>
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
