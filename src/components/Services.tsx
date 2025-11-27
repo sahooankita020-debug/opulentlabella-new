@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Scissors, Sparkles, Brush, Flower, Eye } from "lucide-react";
 import GalleryModal from "./GalleryModal";
 
+type ServicesProps = {
+  setGalleryOpen: (value: boolean) => void;
+};
+
 const services = [
   {
     icon: Flower,
@@ -55,13 +59,15 @@ const serviceImages: Record<string, string[]> = {
   ],
 };
 
-export default function Services() {
+export default function Services({ setGalleryOpen }: ServicesProps) {
   const [openGallery, setOpenGallery] = useState(false);
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
 
   const handleExplore = (serviceTitle: string) => {
-    setGalleryImages(serviceImages[serviceTitle] || []);
+    const imgs = serviceImages[serviceTitle] || [];
+    setGalleryImages(imgs);
     setOpenGallery(true);
+    setGalleryOpen(true); // IMPORTANT
   };
 
   return (
@@ -86,13 +92,9 @@ export default function Services() {
               className="group relative rounded-2xl p-8 bg-white border border-brand-light
               hover:border-brand-primary hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-light/40 to-transparent opacity-0 
-              group-hover:opacity-100 transition-opacity duration-300" />
-
               <div className="relative z-10">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl 
-                bg-gradient-to-br from-brand-light to-brand-primary/25 mb-6 
-                group-hover:shadow-lg group-hover:shadow-brand-primary/40 transition-all duration-300">
+                bg-gradient-to-br from-brand-light to-brand-primary/25 mb-6">
                   <Icon className="w-6 h-6 text-brand-primary" />
                 </div>
 
@@ -106,11 +108,9 @@ export default function Services() {
 
                 <div
                   onClick={() => handleExplore(service.title)}
-                  className="mt-6 flex items-center text-brand-primary font-semibold cursor-pointer 
-                  group-hover:gap-2 transition-all duration-300"
+                  className="mt-6 flex items-center text-brand-primary font-semibold cursor-pointer"
                 >
                   <span>Explore</span>
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
                 </div>
               </div>
             </div>
@@ -118,11 +118,14 @@ export default function Services() {
         })}
       </div>
 
-      {/* FULLSCREEN GALLERY MODAL */}
+      {/* FULLSCREEN GALLERY */}
       <GalleryModal
         images={galleryImages}
         open={openGallery}
-        onClose={() => setOpenGallery(false)}
+        onClose={() => {
+          setOpenGallery(false);
+          setGalleryOpen(false); // IMPORTANT
+        }}
       />
     </section>
   );
