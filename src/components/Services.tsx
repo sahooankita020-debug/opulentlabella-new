@@ -38,21 +38,21 @@ const services = [
 // ✅ FIXED IMAGE PATHS (must match lowercase folder names)
 const serviceImages: Record<string, string[]> = {
   Nails: [
-    "../../public/services/nails/nails1.jpg",
-    "/services/nails/nails2.jpg",
-    "/services/nails/nails3.jpg",
-    "/services/nails/nails4.jpg",
-    "/services/nails/nails5.jpg",
-    "/services/nails/nails6.jpg",
+    "../public/services/nails/nails1.jpg",
+    "../public/services/nails/nails2.jpg",
+    "../public/services/nails/nails3.jpg",
+    "../public/services/nails/nails4.jpg",
+    "../public/services/nails/nails5.jpg",
+    "../public/services/nails/nails6.jpg",
   ],
   Makeup: [],
   Hair: [],
   Waxing: [],
   Lashes: [
-    "/services/lashes/lash1.jpg",
-    "/services/lashes/lash2.jpg",
-    "/services/lashes/lash3.jpg",
-    "/services/lashes/lash4.jpg",
+    "../public/services/lashes/lash1.jpg",
+    "../public/services/lashes/lash2.jpg",
+    "../public/services/lashes/lash3.jpg",
+    "../public/services/lashes/lash4.jpg",
   ],
 };
 
