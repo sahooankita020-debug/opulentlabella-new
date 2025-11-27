@@ -8,24 +8,24 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-cream">
-      
-      {/* Soft Luxury Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-light/40 via-brand-cream to-brand-light/20" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* Decorative Blush Circles */}
-      <div className="absolute top-10 right-10 w-72 h-72 bg-brand-primary/25 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-secondary/20 rounded-full blur-3xl" />
+      {/* Removed bg-brand-cream to stop top navbar-like strip */}
+      {/* Removed full inset gradient */}
+      {/* Added subtle bottom-only gradient for UI balance */}
+      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-b from-transparent via-[#fdecec] to-[#f8dada] pointer-events-none" />
+
+      {/* Decorative Circles (slightly lowered to avoid top strip) */}
+      <div className="absolute top-24 right-10 w-72 h-72 bg-brand-primary/25 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-brand-secondary/20 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
 
-        {/* Tag Label */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur border border-brand-light mb-8">
           <Sparkles className="w-4 h-4 text-brand-primary" />
           <span className="text-sm font-medium text-brand-dark">Premium Beauty Experience</span>
         </div>
 
-        {/* Main Heading */}
         <h1 className="font-serif text-display-lg lg:text-5xl font-bold text-brand-dark mb-6">
           Affordable Beauty Services with a{' '}
           <span className="text-brand-primary font-extrabold">
@@ -33,12 +33,12 @@ export default function Hero() {
           </span>
         </h1>
 
-        {/* Subtext */}
         <p className="text-lg md:text-xl text-brand-dark/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Experience luxury beauty services including Gel Nails, Russian Manicure, Makeup, Waxing, Lashes, Brows, and complete Hair services such as Wig Selling, Installation, Styling, and Wig Treatment — all under one elegant roof.
+          Experience luxury beauty services including Gel Nails, Russian Manicure, Makeup,
+          Waxing, Lashes, Brows, and complete Hair services such as Wig Selling, Installation,
+          Styling, and Wig Treatment — all under one elegant roof.
         </p>
 
-        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <button
             onClick={handleWhatsAppClick}

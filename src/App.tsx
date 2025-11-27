@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";   // 👈 ADD THIS LINE
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -22,12 +21,8 @@ function App() {
   }, [isGalleryOpen]);
 
   return (
-    <div className="min-h-screen bg-white">
+   
 
-      {/* 🔥 Navbar added here */}
-      <Navbar />
-
-      {/* Move Hero down slightly because navbar is fixed */}
       <div className="pt-20">
         <Hero />
 
@@ -40,7 +35,7 @@ function App() {
         <CTASection />
         <Footer />
       </div>
-    </div>
+    
   );
 }
 

@@ -84,10 +84,32 @@ export default function Footer() {
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 text-brand-primary mt-1" />
             <div>
-              <p className="font-semibold text-brand-cream mb-2">Location</p>
-              <p className="text-sm text-brand-cream/85">123 Beauty Street</p>
-              <p className="text-sm text-brand-cream/85">Your City, South Africa</p>
-            </div>
+              <h3 className="text-lg font-semibold text-white mb-3">Our Locations</h3>
+          <ul className="space-y-4">
+
+            <li>
+              <p className="font-semibold text-white">Kimberley (KBY)</p>
+              <p>15565 Nobengula Street</p>
+              <p>Vergenoeg</p>
+              <p>8345, South Africa</p>
+            </li>
+
+            <li>
+              <p className="font-semibold text-white">Johannesburg (JHB)</p>
+              <p>Mykonos</p>
+              <p>Hera Lane, Lone Hill</p>
+              <p>Sandton, 2062, South Africa</p>
+            </li>
+
+            <li>
+              <p className="font-semibold text-white">Durban (DBN)</p>
+              <p>1 Regal Crescent</p>
+              <p>New Germany</p>
+              <p>3610, South Africa</p>
+            </li>
+
+          </ul>
+        </div>
           </div>
         </div>
 
