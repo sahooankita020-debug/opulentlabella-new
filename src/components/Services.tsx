@@ -35,7 +35,6 @@ const services = [
   },
 ];
 
-// ✅ FIXED IMAGE PATHS (must match lowercase folder names)
 const serviceImages: Record<string, string[]> = {
   Nails: [
     "/services/nails/nails1.jpg",
@@ -55,6 +54,7 @@ const serviceImages: Record<string, string[]> = {
     "/services/lashes/lash4.webp",
   ],
 };
+
 
 export default function Services() {
   const [openGallery, setOpenGallery] = useState(false);
