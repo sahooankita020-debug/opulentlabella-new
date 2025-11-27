@@ -38,7 +38,7 @@ const services = [
 // ✅ FIXED IMAGE PATHS (must match lowercase folder names)
 const serviceImages: Record<string, string[]> = {
   Nails: [
-    "/services/nails/nails1.jpg",
+    "../../public/services/nails/nails1.jpg",
     "/services/nails/nails2.jpg",
     "/services/nails/nails3.jpg",
     "/services/nails/nails4.jpg",
