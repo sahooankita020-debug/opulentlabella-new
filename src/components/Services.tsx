@@ -55,7 +55,6 @@ const serviceImages: Record<string, string[]> = {
   ],
 };
 
-
 export default function Services() {
   const [openGallery, setOpenGallery] = useState(false);
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
